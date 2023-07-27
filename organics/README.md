@@ -1,8 +1,6 @@
  # react_native-app-organics
 
  
-
-
 <!-- [Link da aplicação](https://alanserafim-react_native-orgs.vercel.app/) -->
 
 
@@ -11,6 +9,6 @@
 | N. | Conceito trabalhado |
 |--- |---
 | 1 | O que é React Native CLI, Como configurar o ambiente de desenvolvimento, Como criar um Emulador ideal, Como rodar um Projeto.
-| 2 | Conceitos.
+| 2 | Mocks, Estados, Exemplo de useState com classes, componentDidMount
 | 3 | Conceitos.
 | 4 | Conceitos.
