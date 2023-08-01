@@ -11,4 +11,4 @@
 | 1 | O que é React Native CLI, Como configurar o ambiente de desenvolvimento, Como criar um Emulador ideal, Como rodar um Projeto.
 | 2 | Mocks, Estados, Exemplo de useState com classes, componentDidMount
 | 3 | Hooks, useState, useEffect, Estilização condicional, accessibilityLabel.
-| 4 | Conceitos.
+| 4 | Hooks personalizados, useReducer, useMemo.

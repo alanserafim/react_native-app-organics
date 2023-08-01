@@ -14,49 +14,49 @@ const produtores = {
         {
             nome: "Green",
             imagem: green,
-            distancia: `${gerarNumeroAleatorio(1, 500)}m`,
+            distancia: gerarNumeroAleatorio(1, 500),
             estrelas: gerarNumeroAleatorio(1, 5),
         },
         {
             nome: "Salad",
             imagem: salad,
-            distancia: `${gerarNumeroAleatorio(1, 500)}m`,
+            distancia: gerarNumeroAleatorio(1, 500),
             estrelas: gerarNumeroAleatorio(1, 5),
         },
         {
             nome: "Jenny Jack Farm",
             imagem: jennyJack,
-            distancia: `${gerarNumeroAleatorio(1, 500)}m`,
+            distancia: gerarNumeroAleatorio(1, 500),
             estrelas: gerarNumeroAleatorio(1, 5),
         },
         {
             nome: "Grow",
             imagem: grow,
-            distancia: `${gerarNumeroAleatorio(1, 500)}m`,
+            distancia: gerarNumeroAleatorio(1, 500),
             estrelas: gerarNumeroAleatorio(1, 5),
         },
         {
             nome: "Potager",
             imagem: potager,
-            distancia: `${gerarNumeroAleatorio(1, 500)}m`,
+            distancia: gerarNumeroAleatorio(1, 500),
             estrelas: gerarNumeroAleatorio(1, 5),
         },
         {
             nome: "Teste 1",
             imagem: grow,
-            distancia: `${gerarNumeroAleatorio(1, 500)}m`,
+            distancia: gerarNumeroAleatorio(1, 500),
             estrelas: gerarNumeroAleatorio(1, 5),
         },
         {
             nome: "Teste 2",
             imagem: jennyJack,
-            distancia: `${gerarNumeroAleatorio(1, 500)}m`,
+            distancia: gerarNumeroAleatorio(1, 500),
             estrelas: gerarNumeroAleatorio(1, 5),
         },
         {
             nome: "Teste 3",
             imagem: green,
-            distancia: `${gerarNumeroAleatorio(1, 500)}m`,
+            distancia: gerarNumeroAleatorio(1, 500),
             estrelas: gerarNumeroAleatorio(1, 5),
         }
     ]

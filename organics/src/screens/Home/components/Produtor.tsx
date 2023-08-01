@@ -1,12 +1,16 @@
 import {View, Text, StyleSheet, Image, ImageSourcePropType, TouchableOpacity} from 'react-native';
-import React, { useState } from 'react';
+import React, { useMemo, useReducer, useState } from 'react';
 import Estrelas from '../../../components/Estrelas';
 
 interface ProdutorProps {
   nome: string;
   imagem: ImageSourcePropType;
-  distancia?: string;
+  distancia: number;
   estrelas?: number;
+}
+
+const distanciaEmMetros = (distancia: number) => {
+  return `${distancia}m`
 }
 
 export default function Produtor({
@@ -15,11 +19,23 @@ export default function Produtor({
   distancia,
   estrelas,
 }: ProdutorProps) {
-  const [selecionado, setSelecionado] = useState(false);
+
+  const [selecionado, inverterSelecionado] = useReducer(
+    (selecionado) => !selecionado, 
+    false
+  );
+
+  //UseMemo salva o valor da função na memória e só atualiza quando o valor da variável distancia mudar
+  const distanciaTexto = useMemo(
+    () => distanciaEmMetros(distancia), 
+    [distancia])
+    ;
+
+
   return (
     <TouchableOpacity 
       style={estilos.card}
-      onPress={()=> setSelecionado(!selecionado)}
+      onPress={inverterSelecionado}
     >
       <Image style={estilos.imagem} source={imagem} accessibilityLabel={nome} />
       <View style={estilos.informacoes}>
@@ -32,7 +48,7 @@ export default function Produtor({
           />
         </View>
 
-        <Text style={estilos.distancia}>{distancia}</Text>
+        <Text style={estilos.distancia}>{distanciaTexto}</Text>
       </View>
     </TouchableOpacity>
   );
