@@ -12,3 +12,8 @@
 | 2 | Mocks, Estados, Exemplo de useState com classes, componentDidMount
 | 3 | Hooks, useState, useEffect, Estilização condicional, accessibilityLabel.
 | 4 | Hooks personalizados, useReducer, useMemo.
+| 5 | Tipos de Navegação, React Navigation, Tipos de Navegação: Tab, Stack, Modal, DeepLink, Drawer
+| 7 | Conceito
+| 8 | Conceito
+| 9 | Conceito
+| 10 | Conceito
