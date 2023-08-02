@@ -13,7 +13,7 @@
 | 3 | Hooks, useState, useEffect, Estilização condicional, accessibilityLabel.
 | 4 | Hooks personalizados, useReducer, useMemo.
 | 5 | Tipos de Navegação, React Navigation, Tipos de Navegação: Tab, Stack, Modal, DeepLink, Drawer
-| 7 | Conceito
+| 7 | React Navigation, react-navigation/bottom-tabs, AppRotas
 | 8 | Conceito
 | 9 | Conceito
 | 10 | Conceito
