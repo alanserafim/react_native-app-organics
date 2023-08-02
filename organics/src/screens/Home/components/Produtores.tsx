@@ -9,7 +9,7 @@ interface ProdutoresProps {
 }
 
 export default function Produtores({topo}: ProdutoresProps) {
-  const {titulo, lista} = useProdutores();
+  const {titulo, lista} = useProdutores(false);
 
   const TopoLista = () => {
     return (
