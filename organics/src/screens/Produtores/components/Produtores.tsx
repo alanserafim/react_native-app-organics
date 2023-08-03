@@ -1,8 +1,8 @@
 import React, {ReactElement, useEffect, useState} from 'react';
 import {FlatList, StyleSheet, Text} from 'react-native';
-import {carregaProdutores} from '../../../services/carregaDados';
 import Produtor from './Produtor';
 import {useProdutores} from '../../../hooks/useProdutores';
+
 
 interface ProdutoresProps {
   topo: ReactElement;
@@ -10,7 +10,7 @@ interface ProdutoresProps {
 
 export default function Produtores({topo}: ProdutoresProps) {
   const {titulo, lista} = useProdutores(false);
-
+  
   const TopoLista = () => {
     return (
       <>
@@ -23,6 +23,7 @@ export default function Produtores({topo}: ProdutoresProps) {
   return (
     <FlatList
       data={lista}
+      //@ts-ignore
       renderItem={({item}) => <Produtor {...item} />}
       keyExtractor={({nome}) => nome}
       ListHeaderComponent={TopoLista}

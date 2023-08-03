@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Image, StyleSheet, FlatList } from 'react-native';
+import { View, Image, StyleSheet, FlatList, ImageSourcePropType } from 'react-native';
 
 import Texto from '../../../components/Texto';
 
 interface ItemProps {
     item: {
         nome: string;
-        imagem: any;
+        imagem: ImageSourcePropType;
     }
 }
 

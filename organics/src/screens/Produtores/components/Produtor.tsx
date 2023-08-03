@@ -7,6 +7,7 @@ interface ProdutorProps {
   imagem: ImageSourcePropType;
   distancia: number;
   estrelas?: number;
+  aoPressionar: () => void;
 }
 
 const distanciaEmMetros = (distancia: number) => {
@@ -18,6 +19,7 @@ export default function Produtor({
   imagem,
   distancia,
   estrelas,
+  aoPressionar
 }: ProdutorProps) {
 
   const [selecionado, inverterSelecionado] = useReducer(
@@ -35,7 +37,8 @@ export default function Produtor({
   return (
     <TouchableOpacity 
       style={estilos.card}
-      onPress={inverterSelecionado}
+      //onPress={inverterSelecionado}
+      onPress={aoPressionar}
     >
       <Image style={estilos.imagem} source={imagem} accessibilityLabel={nome} />
       <View style={estilos.informacoes}>
