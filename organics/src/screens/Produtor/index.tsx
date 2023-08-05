@@ -1,14 +1,36 @@
 import { useRoute } from '@react-navigation/native';
 import React from 'react';
-import { FlatList, StyleSheet } from 'react-native';
+import { View, FlatList, Image, StyleSheet, Text } from 'react-native';
 import Cesta from './componentes/Cesta';
+import useTextos from '../../hooks/useTextos';
+import Topo from '../../components/Topo';
+import topoImagem from '../../assets/produtores/topo.png';
 
 
 export default function ProdutorTela() {
+  //@ts-ignore
+  const { tituloProdutor, tituloCestas } = useTextos();
 
   const route = useRoute();
   // @ts-ignore
   const { nome, imagem, cestas } = route.params;
+
+  const TopoLista = () => {
+    return<>
+      <Topo 
+        titulo={tituloProdutor} 
+        imagem={topoImagem} 
+        altura={150}
+      />
+      <View style={estilos.conteudo}>
+        <View style={estilos.logo}>
+          <Image source={imagem} style={estilos.produtorImage} />
+          <Text style={estilos.produtor}>{nome}</Text>
+        </View>
+        <Text style={estilos.cestas}>{tituloCestas}</Text>
+      </View>
+    </>
+  }
   
 
   return (
@@ -16,6 +38,7 @@ export default function ProdutorTela() {
       data={cestas}
       renderItem={({ item }) => <Cesta {...item} produtor={{ nome,  imagem }}/>}
       style={estilos.lista}
+      ListHeaderComponent={TopoLista}
     >
 
     </FlatList>

@@ -7,7 +7,7 @@ export default function ProdutorRotas({ componentePrincipal = Home }) {
   const Stack = createStackNavigator();
 
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false}}>
       <Stack.Screen name="HomeProdutor" component={componentePrincipal} />
       <Stack.Screen name="Produtor" component={ProdutorTela} />
     </Stack.Navigator>
