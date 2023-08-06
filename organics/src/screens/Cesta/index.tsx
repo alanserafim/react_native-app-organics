@@ -1,4 +1,5 @@
 import React from 'react';
+import {useRoute} from '@react-navigation/native';
 import {FlatList, StyleSheet, View} from 'react-native';
 
 import Texto from '../../components/Texto';
@@ -14,9 +15,12 @@ interface CestaProps {
   produtor?: any
 }
 
-export default function Cesta({detalhes, itens, produtor}: CestaProps) {
+export default function Cesta() {
   //@ts-ignore
   const {topoCesta, tituloItens} = useTextos();
+  const route = useRoute();
+  //@ts-ignore
+  const { detalhes, itens, produtor } = route.params;
 
   return (
     <>

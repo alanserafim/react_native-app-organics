@@ -1,30 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FlatList, Text, StyleSheet } from 'react-native';
 
 import Produtor from './components/Produtor';
 import Topo from './components/Topo';
 import {useProdutores} from '../../hooks/useProdutores';
 import useTextos from '../../hooks/useTextos';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 interface ProdutoresProps {
   melhoresProdutores: boolean
 }
 
 export default function Produtores({ melhoresProdutores }: ProdutoresProps) {
+
   //@ts-ignore
+  const { tituloProdutores, mensagemCompra } = useTextos();
   const { lista } = useProdutores(melhoresProdutores);
-  //@ts-ignore
-  const { tituloProdutores } = useTextos();
+
   const navigation = useNavigation();
+  const route = useRoute();
+  
+  //@ts-ignore
+  const nomeCompra = route.params?.compra.nome;
+  //@ts-ignore
+  const timestamp = route.params?.compra.timestamp;
+  const mensagemCompleta = mensagemCompra?.replace('$NOME', nomeCompra);
 
+  const [ exibeMensagem, setExibeMensagem ] = useState(false);
 
+  useEffect(() => {
+    setExibeMensagem(!!nomeCompra)
+    let timeout: NodeJS.Timeout;
+    if (nomeCompra) {
+      timeout = setTimeout(() => {
+        setExibeMensagem(false)
+      }, 3000)
+    }
+    return () => clearTimeout(timeout);
+  }, [timestamp])
   
 
   const TopoLista = () => {
     return <>
-      <Topo 
-      melhoresProdutores={melhoresProdutores} />
+      <Topo melhoresProdutores={melhoresProdutores} />
+      { exibeMensagem && <Text style={estilos.compra}>{ mensagemCompleta }</Text>}
+
       <Text style={estilos.titulo}>{tituloProdutores}</Text>
     </>
   }
@@ -53,5 +73,12 @@ const estilos = StyleSheet.create({
     marginTop: 16,
     fontWeight: 'bold',
     color: '#464646',
+  },
+  compra: {
+    backgroundColor: '#EAF5F3',
+    padding: 16,
+    color: '#464646',	
+    fontSize: 16,
+    lineHeight: 26,
   }
 })

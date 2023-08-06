@@ -1,4 +1,6 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
+//import { StackActions  } from '@react-navigation/native';
 import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
 
 import useTextos from '../../../hooks/useTextos';
@@ -17,6 +19,7 @@ interface DetalhesProps {
 export default function Detalhes({ nome, produtor, descricao, preco }: DetalhesProps) {
   //@ts-ignore
   const { botaoComprar } = useTextos();
+  const navigation = useNavigation();
 
   return <>
     <Texto style={estilos.nome}>{ nome }</Texto>
@@ -29,6 +32,20 @@ export default function Detalhes({ nome, produtor, descricao, preco }: DetalhesP
 
     <TouchableOpacity 
       style={estilos.botao} 
+      //reseta todas as telas
+      // onPress={() => navigation.reset({
+      //   index: 0,
+      //   //@ts-ignore
+      //   routes: [{ name: 'Home' }]
+      // })}
+      //reseta somente a stack atual
+      //onPress={()=> navigation.dispatch(StackActions.popToTop())}
+      //@ts-ignore
+      onPress={()=> navigation.navigate('Resumo', { 
+        compra: { 
+          nome,
+          timestamp: + new Date()
+        }})}
     >
       <Texto style={estilos.textoBotao}>{ botaoComprar }</Texto>
     </TouchableOpacity>

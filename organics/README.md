@@ -16,4 +16,4 @@
 | 7 | Navegação Bottom-tabs
 | 8 | Navegação Stack, hook useRoute
 | 9 | Ocultar os títulos da navegação, headerShown, screenOptions, navigation.goBack(), Inserir ícones customizados 
-| 10 | Conceito
+| 10 | Reset, popToTop, navigate
